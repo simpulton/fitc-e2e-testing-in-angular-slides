@@ -1,0 +1,34 @@
+<!DOCTYPE html> 
+<html data-ng-app="myApp">
+  <head>
+    <title>ngConf - Animations</title>
+    <link rel="stylesheet" type="text/css" href="./assets/app.css" />
+  </head>
+
+  <body>
+    <div id="wrapper">
+      <div ng-controller="HistoryCtrl" id="history">
+        <div class="container">
+          <a href="#!/" class="history-home-item">Home</a> |
+          <a href="#!/repo/{{ item.full_name }}" ng-repeat="item in history.list() | itemHistory" class="history-item">{{ item.full_name }}</a>
+        </div>
+      </div>
+      <div ng-controller="StatusCtrl">
+        <div ng-if="rateExceeded">
+          You have exceeded your GH download rate
+        </div>
+      </div>
+      <header id="header" ng-controller="SearchCtrl">
+        <div class="container">
+          <input id="searcher" ng-change="search(q)" ng-model="q" ng-class="{search:isSearch}" placeholder="Search for anything on Github" />
+        </div>
+      </header> 
+      <main id="body">
+        <div class="container">
+          <div ng-view></div>
+        </div>
+      </main>
+    </div>
+    <script src="./assets/app.js"></script>
+  <body>
+</html>

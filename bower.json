@@ -1,0 +1,8 @@
+{
+  "name": "...",
+  "dependencies": {
+    "gumby": "~2.4.11",
+    "jquery": "~2.0.3",
+    "bootstrap": "~3.0.0"
+  }
+}
