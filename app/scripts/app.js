@@ -67,7 +67,7 @@ angular.module('myApp', ['ngAnimate', 'ngRoute', 'app.homePages','app.ghAPI'])
   })
 
   .controller('SearchCtrl', function($location, $scope, $timeout) {
-    var VALID_INPUT_WAIT_DELAY = 50;
+    var VALID_INPUT_WAIT_DELAY = 200;
 
     var searchTimer;
     $scope.search = function(q) {
@@ -167,6 +167,7 @@ angular.module('myApp', ['ngAnimate', 'ngRoute', 'app.homePages','app.ghAPI'])
 
   .controller('ReposCtrl', function($scope, $rootScope, $location, ghRepos, $routeParams) {
     $scope.searchRepos = function(q) {
+      $scope.repos = [];
       ghRepos(q).then(function(items) {
         $scope.repos = items;
       });

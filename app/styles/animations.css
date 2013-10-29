@@ -27,3 +27,64 @@
   left:-40px;
   opacity:0;
 }
+
+.repo-listing {
+  overflow:hidden;
+  box-sizing:border-box;
+}
+
+.repo-listing.ng-enter {
+  -webkit-animation:0.5s repeat_in;
+  animation:0.5s repeat_in;
+  opacity:0;
+}
+
+@keyframes repeat_in {
+  from {
+    max-height:0px;
+    opacity:0;
+  }
+  to {
+    max-height:115px;
+    opacity:1;
+  }
+}
+
+@-webkit-keyframes repeat_in {
+  from {
+    max-height:0px;
+    opacity:0;
+  }
+  to {
+    max-height:115px;
+    opacity:1;
+  }
+}
+
+.repo-listing.ng-leave {
+  -webkit-animation:0.5s repeat_out;
+  animation:0.5s repeat_out;
+}
+
+@keyframes repeat_out {
+  from {
+    max-height:115px;
+    opacity:1;
+  }
+  to {
+    max-height:0px;
+    opacity:0;
+  }
+}
+
+@-webkit-keyframes repeat_out {
+  from {
+    max-height:115px;
+    opacity:1;
+  }
+  to {
+    max-height:0px;
+    opacity:0;
+  }
+}
+
