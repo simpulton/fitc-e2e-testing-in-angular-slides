@@ -88,3 +88,45 @@
   }
 }
 
+.loading-frame {
+  position:absolute;
+  top:0;
+  left:0;
+  right:0;
+  bottom:0;
+  background:rgba(255, 255, 255, 0.8);
+  z-index:1000;
+  box-sizing:border-box;
+}
+
+.loading-frame {
+  padding-top:100px;
+  text-align:center;
+}
+
+.loading-frame .loading-icon {
+  font-size:100px;
+}
+
+.loading-frame.ng-hide-remove {
+  transition:0.5s linear all;
+}
+.loading-frame.ng-hide-add {
+  transition:0.3s linear all 1s;
+}
+
+.loading-frame.ng-hide-remove {
+  opacity:0;
+}
+
+.loading-frame.ng-hide-remove.ng-hide-remove-active {
+  opacity:1;
+}
+
+.loading-frame.ng-hide-add {
+  opacity:1;
+}
+
+.loading-frame.ng-hide-add.ng-hide-add-active {
+  opacity:0;
+}

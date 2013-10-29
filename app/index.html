@@ -23,7 +23,10 @@
           <input id="searcher" ng-change="search(q)" ng-model="q" ng-class="{search:isSearch}" placeholder="Search for anything on Github" />
         </div>
       </header> 
-      <main id="body">
+      <main id="body" ng-controller="StageCtrl">
+        <div ng-show="loadingRoute" class="loading-frame">
+          <i class="fa fa-spinner fa-spin loading-icon"></i>   
+        </div>
         <div class="container">
           <div ng-view class="view-item"></div>
         </div>

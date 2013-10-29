@@ -66,6 +66,15 @@ angular.module('myApp', ['ngAnimate', 'ngRoute', 'app.homePages','app.ghAPI','ap
     });
   })
 
+  .controller('StageCtrl', function($scope, $rootScope) {
+    $rootScope.$on('$routeChangeStart', function() {
+      $scope.loadingRoute = true;
+    });
+    $rootScope.$on('$routeChangeSuccess', function() {
+      $scope.loadingRoute = false;
+    });
+  })
+
   .controller('SearchCtrl', function($location, $scope, $timeout) {
     var VALID_INPUT_WAIT_DELAY = 200;
 

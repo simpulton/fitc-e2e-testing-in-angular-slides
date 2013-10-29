@@ -30,8 +30,8 @@ module.exports = function(grunt) {
       bower_install: {
         command: 'node ./node_modules/bower/bin/bower install'
       },
-      install_bootstrap_fonts: {
-        command: 'cp -R ./bower_components/bootstrap/dist/fonts ./app/fonts'
+      install_fonts: {
+        command: 'cp -R ./bower_components/font-awesome/fonts ./app/fonts'
       },
     },
 
@@ -86,6 +86,7 @@ module.exports = function(grunt) {
         src: [
           './bower_components/bootstrap/dist/css/bootstrap.css',
           './bower_components/bootstrap/dist/css/bootstrap-theme.css',
+          './bower_components/font-awesome/css/font-awesome.css',
           'app/styles/app.css',
           'app/styles/animations.css'
         ]
@@ -176,7 +177,7 @@ module.exports = function(grunt) {
 
   //installation-related
   grunt.registerTask('install', ['update','shell:protractor_install']);
-  grunt.registerTask('update', ['shell:npm_install','shell:bower_install','shell:install_bootstrap_fonts']);
+  grunt.registerTask('update', ['shell:npm_install','shell:bower_install','shell:install_fonts']);
 
   //defaults
   grunt.registerTask('default', ['dev']);
