@@ -96,6 +96,7 @@ module.exports = function(grunt) {
         },
         dest: './app/assets/app.js',
         src: [
+          'bower_components/jquery/jquery.js',
           'lib/angular.js-3d4c80c/angular.js',
           'lib/angular.js-3d4c80c/angular-route.js',
           'lib/angular.js-3d4c80c/angular-animate.js',
@@ -103,8 +104,8 @@ module.exports = function(grunt) {
           'app/scripts/base64.js',
           'app/scripts/gh-api.js',
           'app/scripts/homePages.js',
-          'app/scripts/app.js',
-          //place your JavaScript files here
+          'app/scripts/animations.js',
+          'app/scripts/app.js'
         ]
       },
     },

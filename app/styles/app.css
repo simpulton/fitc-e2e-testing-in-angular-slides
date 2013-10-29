@@ -144,3 +144,12 @@ pre {
 .repo-listing {
   display:block;
 }
+
+.slide-container {
+  min-height:500px;
+  position:relative;
+  overflow:hidden;
+}
+.slide-container .slide {
+  position:absolute;
+}

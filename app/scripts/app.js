@@ -1,4 +1,4 @@
-angular.module('myApp', ['ngAnimate', 'ngRoute', 'app.homePages','app.ghAPI'])
+angular.module('myApp', ['ngAnimate', 'ngRoute', 'app.homePages','app.ghAPI','app.animations'])
 
   .constant('TPL_PATH', '/templates')
 

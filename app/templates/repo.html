@@ -16,21 +16,21 @@
       <input type="search" ng-model="q" class="sub-nav-search search-input" placeholder="search" ng-show="selected!='index'" />
     </nav>
 
-    <div ng-switch="selected">
-      <div ng-switch-when="index">
+    <div ng-switch="selected" class="slide-container">
+      <div ng-switch-when="index" class="slide">
         <pre>
           {{ $parent.$parent.readme }}
         </pre>
       </div>
 
-      <div ng-switch-when="commits">
+      <div ng-switch-when="commits" class="slide">
         <div ng-repeat="com in $parent.$parent.commits | filter:q" class="commit-item listing-item">
           <h4>{{ com.commit.message }}</h4>
           <p>{{ com.sha }}</p>
         </div>
       </div>
 
-      <div ng-switch-default>
+      <div ng-switch-default class="slide">
         <div ng-repeat="item in $parent.$parent.issuesOrPullRequests(selected) | filter:q track by item.id" class="listing-item">
           <h4>{{ item.title }}</h4>
           <p>{{ item.user.login }}</p>
