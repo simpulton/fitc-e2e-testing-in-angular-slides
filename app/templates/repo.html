@@ -1,37 +1,37 @@
 <div class="row">
   <div class="col-md-7" sub-nav-component sub-nav-index-template="repo-readme">
     <nav class="sub-nav">
-      <a href="#!/{{ $parent.repoUrl('#index') }}" class="btn btn-default" ng-class="{'btn-primary':selected=='index'}">
+      <button ng-click="setHash('index')" class="btn btn-default" ng-class="{'btn-primary':selected=='index'}">
         README
-      </a>
-      <a href="#!/{{ $parent.repoUrl('#commits') }}" class="btn btn-default" ng-class="{'btn-primary':selected=='commits'}">
+      </button>
+      <button ng-click="setHash('commits')" class="btn btn-default" ng-class="{'btn-primary':selected=='commits'}">
         Commits
-      </a>
-      <a href="#!/{{ $parent.repoUrl('#pull-requests') }}" class="btn btn-default" ng-class="{'btn-primary':selected=='pull-requests'}">
+      </button>
+      <button ng-click="setHash('pull-requests')" class="btn btn-default" ng-class="{'btn-primary':selected=='pull-requests'}">
         Pull Requests
-      </a>
-      <a href="#!/{{ $parent.repoUrl('#issues') }}" class="btn btn-default" ng-class="{'btn-primary':selected=='issues'}">
+      </button>
+      <button ng-click="setHash('issues')" class="btn btn-default" ng-class="{'btn-primary':selected=='issues'}">
         Issues
-      </a>
+      </button>
       <input type="search" ng-model="q" class="sub-nav-search search-input" placeholder="search" ng-show="selected!='index'" />
     </nav>
 
     <div ng-switch="selected" class="slide-container">
       <div ng-switch-when="index" class="slide">
         <pre>
-          {{ $parent.$parent.readme }}
+          {{ readme }}
         </pre>
       </div>
 
       <div ng-switch-when="commits" class="slide">
-        <div ng-repeat="com in $parent.$parent.commits | filter:q" class="commit-item listing-item">
+        <div ng-repeat="com in commits | filter:q" class="commit-item listing-item">
           <h4>{{ com.commit.message }}</h4>
           <p>{{ com.sha }}</p>
         </div>
       </div>
 
       <div ng-switch-default class="slide">
-        <div ng-repeat="item in $parent.$parent.issuesOrPullRequests(selected) | filter:q track by item.id" class="listing-item">
+        <div ng-repeat="item in issuesOrPullRequests(selected) | filter:q track by item.id" class="listing-item">
           <h4>{{ item.title }}</h4>
           <p>{{ item.user.login }}</p>
         </div>

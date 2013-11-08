@@ -20,11 +20,9 @@
     "karma-phantomjs-launcher": "~0.1.0",
     "karma-coverage": "~0.1.0",
     "karma": "~0.10.2",
-    "protractor": "0.11",
-    "grunt-protractor-runner": "~0.1.2",
-    "grunt-shell-spawn": "~0.3.0"
-  },
-  "dependencies": {
+    "protractor": "latest",
+    "grunt-protractor-runner": "~0.1.6",
+    "grunt-shell-spawn": "~0.3.0",
     "base64codec": "0.0.3"
   }
 }

@@ -148,10 +148,13 @@ pre {
 }
 
 .slide-container {
-  min-height:500px;
+  min-height:800px;
   position:relative;
   overflow:hidden;
 }
 .slide-container .slide {
   position:absolute;
+  top:0;
+  left:0;
+  right:0;
 }

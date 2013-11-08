@@ -2,6 +2,21 @@ angular.module('myApp', ['ngAnimate', 'ngRoute', 'app.homePages','app.ghAPI','ap
 
   .constant('TPL_PATH', '/templates')
 
+  .constant('TEST_PORT', "9999")
+
+  .run(function($animate, $rootScope, $window, $location, TEST_PORT) {
+    $animate.enabled(false);
+
+    $rootScope.setHash = function(hash) {
+      $location.hash(hash);
+    }
+    $rootScope.$watch(function() {
+      return $location.hash();
+    }, function() {
+      $rootScope.$broadcast('hashChange', $location.hash());
+    });
+  })
+
   .config(function($routeProvider, $locationProvider, TPL_PATH) {
     $locationProvider.hashPrefix('!');
     $routeProvider
@@ -157,16 +172,14 @@ angular.module('myApp', ['ngAnimate', 'ngRoute', 'app.homePages','app.ghAPI','ap
           $location.hash('index');
         }
 
-        $scope.$watch(
-          function() { return $location.hash(); },
-          function(page) {
-            var template = page == 'index' ?
-              $scope.indexTemplate :
-              page;
-            $scope.selected = page;
-            $scope.template = TPL_PATH + '/' + parameterize(template) + '.html';
-            $anchorScroll();
-          });
+        $scope.$on('hashChange', function(event, page) {
+          var template = page == 'index' ?
+            $scope.indexTemplate :
+            page;
+          $scope.$parent.selected = page;
+          $scope.$parent.template = TPL_PATH + '/' + parameterize(template) + '.html';
+          $anchorScroll();
+        });
       }
     };
   })
