@@ -1,10 +1,16 @@
 module.exports = function(config) {
   config.set({
     files : [
-      'lib/angular-1.2.0-rc.2/angular.js',
-      'lib/angular-1.2.0-rc.2/angular-route.js',
-      'lib/angular-1.2.0-rc.2/angular-mocks.js',
+      'bower_components/jquery/jquery.js',
+      'lib/angular-1.2.0/angular.js',
+      'lib/angular-1.2.0/angular-route.js',
+      'lib/angular-1.2.0/angular-animate.js',
+      'lib/angular-1.2.0/angular-mocks.js',
+      'node_modules/base64codec/base64codec.js',
+      'app/scripts/base64.js',
+      'app/scripts/gh-api.js',
       'app/scripts/homePages.js',
+      'app/scripts/animations.js',
       'app/scripts/app.js',
       'test/unit/**/*.js'
     ],
