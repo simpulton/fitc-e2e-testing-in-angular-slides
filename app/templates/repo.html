@@ -56,7 +56,7 @@
     </div>
     <div ng-controller="CollaboratorsCtrl" class="panel">
       <div class="row collab-nav">
-        <input type="search" ng-model="q" class="col-md-12 search-input" />
+        <input id="collab-search" type="search" ng-model="q" class="col-md-12 search-input" />
       </div>
       <div ng-repeat="collab in collaborators" class="user-avatar-list-item">
         <img ng-src="{{ collab.avatar_url }}" title="{{ collab.login }}" class="user-avatar" ng-class="getClass(collab, q)" />

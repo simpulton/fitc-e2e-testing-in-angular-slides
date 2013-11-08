@@ -67,6 +67,7 @@ module.exports = function(grunt) {
     protractor: {
       options: {
         keepAlive: false,
+        //debug: true,
         configFile: "./test/protractor.conf.js"
       },
       singlerun: {},
@@ -107,6 +108,19 @@ module.exports = function(grunt) {
           'app/scripts/homePages.js',
           'app/scripts/animations.js',
           'app/scripts/app.js'
+        ]
+      },
+      form: {
+        options: {
+          separator: ';'
+        },
+        dest: './app/assets/forj.js',
+        src: [
+          'bower_components/jquery/jquery.js',
+          'lib/angular-1.2.0/angular.js',
+          'lib/angular-1.2.0/angular-route.js',
+          'lib/angular-1.2.0/angular-animate.js',
+          'app/scripts/form.js'
         ]
       },
     },

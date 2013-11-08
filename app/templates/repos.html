@@ -1,3 +1,4 @@
+<h1>{{ repos.length }} repos found</h1>
 <a href="#!/repo/{{ repo.owner.login }}/{{ repo.name }}" ng-repeat="repo in repos" class="row repo-listing">
   <div class="col-md-1 repo-index">
     <img ng-src="{{ repo.owner.avatar_url }}" class="repo-avatar" />

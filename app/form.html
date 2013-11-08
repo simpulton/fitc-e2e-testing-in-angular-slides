@@ -1,0 +1,41 @@
+<!DOCTYPE html> 
+<html data-ng-app="myForm">
+  <head>
+    <title>ngConf - Animations</title>
+  </head>
+
+  <body>
+<form ng-submit="submit()" ng-controller="FormCtrl">
+  <ol>
+    <li>
+      <div class="label">
+        <label>First Name:</label>
+      </div>
+      <div class="details">
+        <input type="text" name="first_name" ng-model="first_name" />
+      </div>
+    </li>
+    <li>
+      <div class="label">
+        <label>Last Name:</label>
+      </div>
+      <div class="details">
+        <input type="text" name="last_name" ng-model="last_name" />
+      </div>
+    </li>
+    <li>
+      <div class="label">
+        <label>Age:</label>
+      </div>
+      <div class="details">
+        <input type="number" ng-model="age" />
+      </div>
+    </li>
+  </ol>
+</form>
+    <script src="./assets/form.js"></script>
+    <script>
+angular.module('myForm', []);
+    </script>
+  <body>
+</html>
